@@ -1,0 +1,161 @@
+(ExpressProject "dm_sensor"
+  (ProjectVersion "19981106")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library"
+      (File "d:\electronics\library\capture\my.olb"
+        (Type "Schematic Library")))
+    (NoModify)
+    (File ".\dm_sensor.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    ("Create Allegro Netlist" "TRUE")
+    ("Allegro Netlist Directory" "allegro")
+    ("View Allegro Netlist Files" "FALSE")
+    ("Allegro Netlist Create DCF File" "FALSE")
+    ("Update Allegro Board" "TRUE")
+    ("Allegro Netlist Output Board File" "DM_SENSOR.brd")
+    ("Allegro Netlist Remove Etch" "FALSE")
+    ("Allegro Netlist Place Changed Component" "ALWAYS_REPLACE")
+    ("Allegro Netlist Open Board in Allegro" "ALLEGRO")
+    ("Allegro Setup Backup Versions" "3")
+    ("Allegro Setup Output Warnings" "TRUE")
+    ("Allegro Setup Ignore Constraints" "FALSE")
+    ("Allegro Setup Part Type Length" "31")
+    ("Allegro Netlist Combine Property String" "PCB Footprint")
+    ("Allegro Netlist Ignore Fixed Property" "FALSE")
+    ("Allegro Netlist User Defined Property" "FALSE")
+    (Netlist_TAB "0")
+    ("Allegro Netlist Input Board File" "DM_SENSOR.brd")
+    (BOM_Scope "0")
+    (BOM_Mode "0")
+    (BOM_Report_File
+       "D:\WORK\STM32F4\MY\HOSTDEVICE\SENSOR\SHEMATIC\BUTTON4\DM_SENSOR.BOM")
+    (BOM_Merge_Include "FALSE")
+    (BOM_Property_Combine_7.0
+       "{Item}\t{Quantity}\t{Reference}\t{Value}\t{PCB Footprint}")
+    (BOM_Header "Item\tQuantity\tReference\tPart")
+    (BOM_Include_File
+       "D:\WORK\STM32F4\MY\HOSTDEVICE\SENSOR\SHEMATIC\BUTTON4\DM_SENSOR.INC")
+    (BOM_Include_File_Combine_7.0 "{Item}\t{Quantity}\t{Reference}\t{Value}")
+    (BOM_One_Part_Per_Line "FALSE")
+    (Open_BOM_in_Excel "TRUE")
+    (BOM_View_Output "FALSE"))
+  (Folder "Outputs"
+    (File ".\allegro\pstxnet.dat"
+      (Type "Report")
+      (DisplayName "pstxnet.dat"))
+    (File ".\allegro\pstxprt.dat"
+      (Type "Report")
+      (DisplayName "pstxprt.dat"))
+    (File ".\allegro\pstchip.dat"
+      (Type "Report")
+      (DisplayName "pstchip.dat"))
+    (File ".\dm_sensor.bom"
+      (Type "Report")))
+  (Folder "Referenced Projects")
+  (PartMRUSelector
+    ("PS LD1117DTTR"
+      (FullPartName "PS LD1117DTTR.Normal")
+      (LibraryName "D:\ELECTRONICS\LIBRARY\CAPTURE\MY.OLB")
+      (DeviceIndex "0"))
+    ("R sm 1206"
+      (FullPartName "R sm 1206.Normal")
+      (LibraryName "D:\ELECTRONICS\LIBRARY\CAPTURE\MY.OLB")
+      (DeviceIndex "0"))
+    ("D 1N4148 sm"
+      (FullPartName "D 1N4148 sm.Normal")
+      (LibraryName "D:\ELECTRONICS\LIBRARY\CAPTURE\MY.OLB")
+      (DeviceIndex "0"))
+    ("D LED sm 0805"
+      (FullPartName "D LED sm 0805.Normal")
+      (LibraryName "D:\ELECTRONICS\LIBRARY\CAPTURE\MY.OLB")
+      (DeviceIndex "0"))
+    ("J Connector 10"
+      (FullPartName "J Connector 10.Normal")
+      (LibraryName "D:\ELECTRONICS\LIBRARY\CAPTURE\MY.OLB")
+      (DeviceIndex "0"))
+    ("JP Jumper DIP2"
+      (FullPartName "JP Jumper DIP2.Normal")
+      (LibraryName "D:\ELECTRONICS\LIBRARY\CAPTURE\MY.OLB")
+      (DeviceIndex "0"))
+    ("J AVR USB ASP"
+      (FullPartName "J AVR USB ASP.Normal")
+      (LibraryName "D:\ELECTRONICS\LIBRARY\CAPTURE\MY.OLB")
+      (DeviceIndex "0"))
+    ("U ADM1485ARMZ"
+      (FullPartName "U ADM1485ARMZ.Normal")
+      (LibraryName "D:\ELECTRONICS\LIBRARY\CAPTURE\MY.OLB")
+      (DeviceIndex "0"))
+    ("L sm 0805"
+      (FullPartName "L sm 0805.Normal")
+      (LibraryName "D:\ELECTRONICS\LIBRARY\CAPTURE\MY.OLB")
+      (DeviceIndex "0"))
+    ("S Button 3x4 mm SMD 2"
+      (FullPartName "S Button 3x4 mm SMD 2.Normal")
+      (LibraryName "D:\ELECTRONICS\LIBRARY\CAPTURE\MY.OLB")
+      (DeviceIndex "0"))
+    ("S Button DIP2"
+      (FullPartName "S Button DIP2.Normal")
+      (LibraryName "D:\ELECTRONICS\LIBRARY\CAPTURE\MY.OLB")
+      (DeviceIndex "0"))
+    ("R sm 0603"
+      (FullPartName "R sm 0603.Normal")
+      (LibraryName "D:\ELECTRONICS\LIBRARY\CAPTURE\MY.OLB")
+      (DeviceIndex "0"))
+    ("Y Crystal"
+      (FullPartName "Y Crystal.Normal")
+      (LibraryName "D:\ELECTRONICS\LIBRARY\CAPTURE\MY.OLB")
+      (DeviceIndex "0"))
+    ("U ATMEGA32L-8AU"
+      (FullPartName "U ATMEGA32L-8AU.Normal")
+      (LibraryName "D:\ELECTRONICS\LIBRARY\CAPTURE\MY.OLB")
+      (DeviceIndex "0"))
+    ("C sm tantalum size C"
+      (FullPartName "C sm tantalum size C.Normal")
+      (LibraryName "D:\ELECTRONICS\LIBRARY\CAPTURE\MY.OLB")
+      (DeviceIndex "0"))
+    ("C sm 0603"
+      (FullPartName "C sm 0603.Normal")
+      (LibraryName "D:\ELECTRONICS\LIBRARY\CAPTURE\MY.OLB")
+      (DeviceIndex "0"))
+    ("PS LF50CDT"
+      (FullPartName "PS LF50CDT.Normal")
+      (LibraryName "D:\ELECTRONICS\LIBRARY\CAPTURE\MY.OLB")
+      (DeviceIndex "0"))
+    ("U ATMEGA32L-AU"
+      (FullPartName "U ATMEGA32L-AU.Normal")
+      (LibraryName "D:\ELECTRONICS\LIBRARY\CAPTURE\MY.OLB")
+      (DeviceIndex "0")))
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources"
+         "D:\WORK\DM\HOST\SENSOR\Button4_ATMega32A\PCB\dm_sensor.dsn")
+      (Path "Design Resources"
+         "D:\WORK\DM\HOST\SENSOR\Button4_ATMega32A\PCB\dm_sensor.dsn"
+         "SCHEMATIC1")
+      (Path "Design Resources" "Library")
+      (Path "Outputs")
+      (Select "Design Resources"
+         "D:\WORK\DM\HOST\SENSOR\Button4_ATMega32A\PCB\dm_sensor.dsn"
+         "SCHEMATIC1" "PAGE1"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 0 717 -8 -31 0 200 0 577"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -31 52 1396 52 587")
+        (Scroll "185 231")
+        (Zoom "208")
+        (Occurrence "/"))
+      (Path "D:\WORK\DM\HOST\SENSOR\BUTTON4_ATMEGA32A\PCB\DM_SENSOR.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE1")))
+  (MPSSessionName "user")
+  (ISPCBBASICLICENSE "false"))

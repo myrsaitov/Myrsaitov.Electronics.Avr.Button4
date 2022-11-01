@@ -1,0 +1,702 @@
+   1               		.file	"main.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	__vector_1
+  18               	__vector_1:
+  19               	.LFB12:
+  20               	.LM1:
+  21 0000 1F92      		push __zero_reg__
+  22 0002 0F92      		push r0
+  23 0004 0FB6      		in r0,__SREG__
+  24 0006 0F92      		push r0
+  25 0008 1124      		clr __zero_reg__
+  26 000a 8F93      		push r24
+  27 000c 9F93      		push r25
+  28 000e AF93      		push r26
+  29 0010 BF93      		push r27
+  30               	/* prologue: Signal */
+  31               	/* frame size = 0 */
+  32               	.LM2:
+  33               	/* #APP */
+  34               	 ;  167 "main.c" 1
+  35 0012 F894      		cli
+  36               	 ;  0 "" 2
+  37               	.LM3:
+  38               	/* #NOAPP */
+  39 0014 C999      		sbic 57-32,1
+  40 0016 00C0      		rjmp .L2
+  41               	.LM4:
+  42 0018 8091 0000 		lds r24,ButtonTimer_0
+  43 001c 9091 0000 		lds r25,(ButtonTimer_0)+1
+  44 0020 A091 0000 		lds r26,(ButtonTimer_0)+2
+  45 0024 B091 0000 		lds r27,(ButtonTimer_0)+3
+  46 0028 0097      		sbiw r24,0
+  47 002a A105      		cpc r26,__zero_reg__
+  48 002c B105      		cpc r27,__zero_reg__
+  49 002e 01F4      		brne .L2
+  50               	.LM5:
+  51 0030 8FEF      		ldi r24,lo8(102399)
+  52 0032 9FE8      		ldi r25,hi8(102399)
+  53 0034 A1E0      		ldi r26,hlo8(102399)
+  54 0036 B0E0      		ldi r27,hhi8(102399)
+  55 0038 8093 0000 		sts ButtonTimer_0,r24
+  56 003c 9093 0000 		sts (ButtonTimer_0)+1,r25
+  57 0040 A093 0000 		sts (ButtonTimer_0)+2,r26
+  58 0044 B093 0000 		sts (ButtonTimer_0)+3,r27
+  59               	.LM6:
+  60 0048 8FEF      		ldi r24,lo8(-1)
+  61 004a 8093 0000 		sts Button_0_State,r24
+  62               	.LM7:
+  63 004e 81E0      		ldi r24,lo8(1)
+  64 0050 8093 0000 		sts Button_Pressed,r24
+  65               	.L2:
+  66               	.LM8:
+  67 0054 CC99      		sbic 57-32,4
+  68 0056 00C0      		rjmp .L3
+  69               	.LM9:
+  70 0058 8091 0000 		lds r24,ButtonTimer_1
+  71 005c 9091 0000 		lds r25,(ButtonTimer_1)+1
+  72 0060 A091 0000 		lds r26,(ButtonTimer_1)+2
+  73 0064 B091 0000 		lds r27,(ButtonTimer_1)+3
+  74 0068 0097      		sbiw r24,0
+  75 006a A105      		cpc r26,__zero_reg__
+  76 006c B105      		cpc r27,__zero_reg__
+  77 006e 01F4      		brne .L3
+  78               	.LM10:
+  79 0070 8FEF      		ldi r24,lo8(102399)
+  80 0072 9FE8      		ldi r25,hi8(102399)
+  81 0074 A1E0      		ldi r26,hlo8(102399)
+  82 0076 B0E0      		ldi r27,hhi8(102399)
+  83 0078 8093 0000 		sts ButtonTimer_1,r24
+  84 007c 9093 0000 		sts (ButtonTimer_1)+1,r25
+  85 0080 A093 0000 		sts (ButtonTimer_1)+2,r26
+  86 0084 B093 0000 		sts (ButtonTimer_1)+3,r27
+  87               	.LM11:
+  88 0088 8FEF      		ldi r24,lo8(-1)
+  89 008a 8093 0000 		sts Button_1_State,r24
+  90               	.LM12:
+  91 008e 82E0      		ldi r24,lo8(2)
+  92 0090 8093 0000 		sts Button_Pressed,r24
+  93               	.L3:
+  94               	.LM13:
+  95 0094 9F99      		sbic 51-32,7
+  96 0096 00C0      		rjmp .L4
+  97               	.LM14:
+  98 0098 8091 0000 		lds r24,ButtonTimer_2
+  99 009c 9091 0000 		lds r25,(ButtonTimer_2)+1
+ 100 00a0 A091 0000 		lds r26,(ButtonTimer_2)+2
+ 101 00a4 B091 0000 		lds r27,(ButtonTimer_2)+3
+ 102 00a8 0097      		sbiw r24,0
+ 103 00aa A105      		cpc r26,__zero_reg__
+ 104 00ac B105      		cpc r27,__zero_reg__
+ 105 00ae 01F4      		brne .L4
+ 106               	.LM15:
+ 107 00b0 8FEF      		ldi r24,lo8(102399)
+ 108 00b2 9FE8      		ldi r25,hi8(102399)
+ 109 00b4 A1E0      		ldi r26,hlo8(102399)
+ 110 00b6 B0E0      		ldi r27,hhi8(102399)
+ 111 00b8 8093 0000 		sts ButtonTimer_2,r24
+ 112 00bc 9093 0000 		sts (ButtonTimer_2)+1,r25
+ 113 00c0 A093 0000 		sts (ButtonTimer_2)+2,r26
+ 114 00c4 B093 0000 		sts (ButtonTimer_2)+3,r27
+ 115               	.LM16:
+ 116 00c8 8FEF      		ldi r24,lo8(-1)
+ 117 00ca 8093 0000 		sts Button_2_State,r24
+ 118               	.LM17:
+ 119 00ce 83E0      		ldi r24,lo8(3)
+ 120 00d0 8093 0000 		sts Button_Pressed,r24
+ 121               	.L4:
+ 122               	.LM18:
+ 123 00d4 9E99      		sbic 51-32,6
+ 124 00d6 00C0      		rjmp .L5
+ 125               	.LM19:
+ 126 00d8 8091 0000 		lds r24,ButtonTimer_3
+ 127 00dc 9091 0000 		lds r25,(ButtonTimer_3)+1
+ 128 00e0 A091 0000 		lds r26,(ButtonTimer_3)+2
+ 129 00e4 B091 0000 		lds r27,(ButtonTimer_3)+3
+ 130 00e8 0097      		sbiw r24,0
+ 131 00ea A105      		cpc r26,__zero_reg__
+ 132 00ec B105      		cpc r27,__zero_reg__
+ 133 00ee 01F4      		brne .L5
+ 134               	.LM20:
+ 135 00f0 8FEF      		ldi r24,lo8(102399)
+ 136 00f2 9FE8      		ldi r25,hi8(102399)
+ 137 00f4 A1E0      		ldi r26,hlo8(102399)
+ 138 00f6 B0E0      		ldi r27,hhi8(102399)
+ 139 00f8 8093 0000 		sts ButtonTimer_3,r24
+ 140 00fc 9093 0000 		sts (ButtonTimer_3)+1,r25
+ 141 0100 A093 0000 		sts (ButtonTimer_3)+2,r26
+ 142 0104 B093 0000 		sts (ButtonTimer_3)+3,r27
+ 143               	.LM21:
+ 144 0108 8FEF      		ldi r24,lo8(-1)
+ 145 010a 8093 0000 		sts Button_3_State,r24
+ 146               	.LM22:
+ 147 010e 84E0      		ldi r24,lo8(4)
+ 148 0110 8093 0000 		sts Button_Pressed,r24
+ 149               	.L5:
+ 150               	.LM23:
+ 151               	/* #APP */
+ 152               	 ;  216 "main.c" 1
+ 153 0114 7894      		sei
+ 154               	 ;  0 "" 2
+ 155               	/* epilogue start */
+ 156               	.LM24:
+ 157               	/* #NOAPP */
+ 158 0116 BF91      		pop r27
+ 159 0118 AF91      		pop r26
+ 160 011a 9F91      		pop r25
+ 161 011c 8F91      		pop r24
+ 162 011e 0F90      		pop r0
+ 163 0120 0FBE      		out __SREG__,r0
+ 164 0122 0F90      		pop r0
+ 165 0124 1F90      		pop __zero_reg__
+ 166 0126 1895      		reti
+ 167               	.LFE12:
+ 169               		.data
+ 170               	.LC0:
+ 171 0000 6765 7400 		.string	"get"
+ 172               	.LC1:
+ 173 0004 2530 3164 		.string	"%01d%\r\n"
+ 173      250D 0A00 
+ 174               		.text
+ 175               	.global	main
+ 177               	main:
+ 178               	.LFB11:
+ 179               	.LM25:
+ 180 0128 AF92      		push r10
+ 181 012a BF92      		push r11
+ 182 012c CF92      		push r12
+ 183 012e DF92      		push r13
+ 184 0130 EF92      		push r14
+ 185 0132 FF92      		push r15
+ 186 0134 0F93      		push r16
+ 187 0136 1F93      		push r17
+ 188 0138 DF93      		push r29
+ 189 013a CF93      		push r28
+ 190 013c CDB7      		in r28,__SP_L__
+ 191 013e DEB7      		in r29,__SP_H__
+ 192 0140 2897      		sbiw r28,8
+ 193 0142 0FB6      		in __tmp_reg__,__SREG__
+ 194 0144 F894      		cli
+ 195 0146 DEBF      		out __SP_H__,r29
+ 196 0148 0FBE      		out __SREG__,__tmp_reg__
+ 197 014a CDBF      		out __SP_L__,r28
+ 198               	/* prologue: function */
+ 199               	/* frame size = 8 */
+ 200               	.LM26:
+ 201 014c 88E8      		ldi r24,lo8(5000)
+ 202 014e 93E1      		ldi r25,hi8(5000)
+ 203               	.LVL0:
+ 204               	.LBB36:
+ 205               	.LBB37:
+ 206               	.LBB38:
+ 207               	.LBB39:
+ 208               	.LM27:
+ 209 0150 28EB      		ldi r18,lo8(184)
+ 210 0152 30E0      		ldi r19,hi8(184)
+ 211               	.L8:
+ 212 0154 F901      		movw r30,r18
+ 213               	.LVL1:
+ 214               	/* #APP */
+ 215               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 216 0156 3197      		1: sbiw r30,1
+ 217 0158 01F4      		brne 1b
+ 218               	 ;  0 "" 2
+ 219               	/* #NOAPP */
+ 220               	.LBE39:
+ 221               	.LBE38:
+ 222               	.LM28:
+ 223 015a 0197      		sbiw r24,1
+ 224               	.LM29:
+ 225 015c 01F4      		brne .L8
+ 226               	.LBE37:
+ 227               	.LBE36:
+ 228               	.LM30:
+ 229 015e 8B9A      		sbi 49-32,3
+ 230               	.LM31:
+ 231 0160 9398      		cbi 50-32,3
+ 232               	.LM32:
+ 233 0162 D09A      		sbi 58-32,0
+ 234               	.LM33:
+ 235 0164 D39A      		sbi 58-32,3
+ 236               	.LM34:
+ 237 0166 D69A      		sbi 58-32,6
+ 238               	.LM35:
+ 239 0168 D79A      		sbi 58-32,7
+ 240               	.LM36:
+ 241 016a A198      		cbi 52-32,1
+ 242               	.LM37:
+ 243 016c A498      		cbi 52-32,4
+ 244               	.LM38:
+ 245 016e A798      		cbi 52-32,7
+ 246               	.LM39:
+ 247 0170 A698      		cbi 52-32,6
+ 248               	.LM40:
+ 249 0172 D99A      		sbi 59-32,1
+ 250               	.LM41:
+ 251 0174 DC9A      		sbi 59-32,4
+ 252               	.LM42:
+ 253 0176 AF9A      		sbi 53-32,7
+ 254               	.LM43:
+ 255 0178 AE9A      		sbi 53-32,6
+ 256               	.LM44:
+ 257 017a 929A      		sbi 50-32,2
+ 258               	.LM45:
+ 259 017c 8A98      		cbi 49-32,2
+ 260               	.LM46:
+ 261 017e 85B7      		in r24,85-32
+ 262               	.LVL2:
+ 263 0180 8260      		ori r24,lo8(2)
+ 264 0182 85BF      		out 85-32,r24
+ 265               	.LM47:
+ 266 0184 8BB7      		in r24,91-32
+ 267 0186 8064      		ori r24,lo8(64)
+ 268 0188 8BBF      		out 91-32,r24
+ 269               	.LM48:
+ 270 018a 80E0      		ldi r24,lo8(uart_stream)
+ 271 018c 90E0      		ldi r25,hi8(uart_stream)
+ 272 018e 9093 0000 		sts (__iob)+1,r25
+ 273 0192 8093 0000 		sts __iob,r24
+ 274 0196 9093 0000 		sts (__iob+2)+1,r25
+ 275 019a 8093 0000 		sts __iob+2,r24
+ 276               	.LM49:
+ 277 019e 87E0      		ldi r24,lo8(7)
+ 278 01a0 90E0      		ldi r25,hi8(7)
+ 279 01a2 0E94 0000 		call uart_init
+ 280               	.LVL3:
+ 281               	.LM50:
+ 282               	/* #APP */
+ 283               	 ;  65 "main.c" 1
+ 284 01a6 7894      		sei
+ 285               	 ;  0 "" 2
+ 286               	/* #NOAPP */
+ 287               	.LBB40:
+ 288               	.LBB41:
+ 289               	.LBB42:
+ 290               	.LBB43:
+ 291               	.LM51:
+ 292 01a8 08EB      		ldi r16,lo8(184)
+ 293 01aa 10E0      		ldi r17,hi8(184)
+ 294               	.LBE43:
+ 295               	.LBE42:
+ 296               	.LBE41:
+ 297               	.LBE40:
+ 298               	.LBB47:
+ 299               	.LBB48:
+ 300               	.LBB49:
+ 301               	.LBB50:
+ 302 01ac 93E3      		ldi r25,lo8(1843)
+ 303 01ae A92E      		mov r10,r25
+ 304 01b0 97E0      		ldi r25,hi8(1843)
+ 305 01b2 B92E      		mov r11,r25
+ 306               	.LBE50:
+ 307               	.LBE49:
+ 308               	.LBE48:
+ 309               	.LBE47:
+ 310               	.LM52:
+ 311 01b4 7E01      		movw r14,r28
+ 312 01b6 0894      		sec
+ 313 01b8 E11C      		adc r14,__zero_reg__
+ 314 01ba F11C      		adc r15,__zero_reg__
+ 315 01bc 80E0      		ldi r24,lo8(.LC1)
+ 316 01be C82E      		mov r12,r24
+ 317 01c0 80E0      		ldi r24,hi8(.LC1)
+ 318 01c2 D82E      		mov r13,r24
+ 319               	.LVL4:
+ 320               	.L33:
+ 321               	.LM53:
+ 322 01c4 9398      		cbi 50-32,3
+ 323               	.LM54:
+ 324 01c6 8091 0000 		lds r24,ButtonTimer_0
+ 325 01ca 9091 0000 		lds r25,(ButtonTimer_0)+1
+ 326 01ce A091 0000 		lds r26,(ButtonTimer_0)+2
+ 327 01d2 B091 0000 		lds r27,(ButtonTimer_0)+3
+ 328               	.LVL5:
+ 329 01d6 0097      		sbiw r24,0
+ 330 01d8 A105      		cpc r26,__zero_reg__
+ 331 01da B105      		cpc r27,__zero_reg__
+ 332 01dc 01F0      		breq .L9
+ 333               	.LM55:
+ 334 01de D89A      		sbi 59-32,0
+ 335 01e0 0197      		sbiw r24,1
+ 336 01e2 A109      		sbc r26,__zero_reg__
+ 337 01e4 B109      		sbc r27,__zero_reg__
+ 338 01e6 8093 0000 		sts ButtonTimer_0,r24
+ 339 01ea 9093 0000 		sts (ButtonTimer_0)+1,r25
+ 340 01ee A093 0000 		sts (ButtonTimer_0)+2,r26
+ 341 01f2 B093 0000 		sts (ButtonTimer_0)+3,r27
+ 342 01f6 00C0      		rjmp .L10
+ 343               	.L9:
+ 344               	.LM56:
+ 345 01f8 D898      		cbi 59-32,0
+ 346               	.L10:
+ 347               	.LM57:
+ 348 01fa 8091 0000 		lds r24,ButtonTimer_1
+ 349 01fe 9091 0000 		lds r25,(ButtonTimer_1)+1
+ 350 0202 A091 0000 		lds r26,(ButtonTimer_1)+2
+ 351 0206 B091 0000 		lds r27,(ButtonTimer_1)+3
+ 352 020a 0097      		sbiw r24,0
+ 353 020c A105      		cpc r26,__zero_reg__
+ 354 020e B105      		cpc r27,__zero_reg__
+ 355 0210 01F0      		breq .L11
+ 356               	.LM58:
+ 357 0212 DB9A      		sbi 59-32,3
+ 358 0214 0197      		sbiw r24,1
+ 359 0216 A109      		sbc r26,__zero_reg__
+ 360 0218 B109      		sbc r27,__zero_reg__
+ 361 021a 8093 0000 		sts ButtonTimer_1,r24
+ 362 021e 9093 0000 		sts (ButtonTimer_1)+1,r25
+ 363 0222 A093 0000 		sts (ButtonTimer_1)+2,r26
+ 364 0226 B093 0000 		sts (ButtonTimer_1)+3,r27
+ 365 022a 00C0      		rjmp .L12
+ 366               	.L11:
+ 367               	.LM59:
+ 368 022c DB98      		cbi 59-32,3
+ 369               	.L12:
+ 370               	.LM60:
+ 371 022e 8091 0000 		lds r24,ButtonTimer_2
+ 372 0232 9091 0000 		lds r25,(ButtonTimer_2)+1
+ 373 0236 A091 0000 		lds r26,(ButtonTimer_2)+2
+ 374 023a B091 0000 		lds r27,(ButtonTimer_2)+3
+ 375 023e 0097      		sbiw r24,0
+ 376 0240 A105      		cpc r26,__zero_reg__
+ 377 0242 B105      		cpc r27,__zero_reg__
+ 378 0244 01F0      		breq .L13
+ 379               	.LM61:
+ 380 0246 DE9A      		sbi 59-32,6
+ 381 0248 0197      		sbiw r24,1
+ 382 024a A109      		sbc r26,__zero_reg__
+ 383 024c B109      		sbc r27,__zero_reg__
+ 384 024e 8093 0000 		sts ButtonTimer_2,r24
+ 385 0252 9093 0000 		sts (ButtonTimer_2)+1,r25
+ 386 0256 A093 0000 		sts (ButtonTimer_2)+2,r26
+ 387 025a B093 0000 		sts (ButtonTimer_2)+3,r27
+ 388 025e 00C0      		rjmp .L14
+ 389               	.L13:
+ 390               	.LM62:
+ 391 0260 DE98      		cbi 59-32,6
+ 392               	.L14:
+ 393               	.LM63:
+ 394 0262 8091 0000 		lds r24,ButtonTimer_3
+ 395 0266 9091 0000 		lds r25,(ButtonTimer_3)+1
+ 396 026a A091 0000 		lds r26,(ButtonTimer_3)+2
+ 397 026e B091 0000 		lds r27,(ButtonTimer_3)+3
+ 398 0272 0097      		sbiw r24,0
+ 399 0274 A105      		cpc r26,__zero_reg__
+ 400 0276 B105      		cpc r27,__zero_reg__
+ 401 0278 01F0      		breq .L15
+ 402               	.LM64:
+ 403 027a DF9A      		sbi 59-32,7
+ 404 027c 0197      		sbiw r24,1
+ 405 027e A109      		sbc r26,__zero_reg__
+ 406 0280 B109      		sbc r27,__zero_reg__
+ 407 0282 8093 0000 		sts ButtonTimer_3,r24
+ 408 0286 9093 0000 		sts (ButtonTimer_3)+1,r25
+ 409 028a A093 0000 		sts (ButtonTimer_3)+2,r26
+ 410 028e B093 0000 		sts (ButtonTimer_3)+3,r27
+ 411 0292 00C0      		rjmp .L16
+ 412               	.L15:
+ 413               	.LM65:
+ 414 0294 DF98      		cbi 59-32,7
+ 415               	.L16:
+ 416               	.LM66:
+ 417 0296 8091 0000 		lds r24,__iob
+ 418 029a 9091 0000 		lds r25,(__iob)+1
+ 419 029e 0E94 0000 		call fgetc
+ 420               	.LVL6:
+ 421 02a2 2FEF      		ldi r18,hi8(-1)
+ 422 02a4 8F3F      		cpi r24,lo8(-1)
+ 423 02a6 9207      		cpc r25,r18
+ 424               	.LVL7:
+ 425 02a8 01F4      		brne .+2
+ 426 02aa 00C0      		rjmp .L33
+ 427               	.LM67:
+ 428 02ac 8D30      		cpi r24,13
+ 429 02ae 9105      		cpc r25,__zero_reg__
+ 430 02b0 01F0      		breq .L18
+ 431 02b2 8A30      		cpi r24,10
+ 432 02b4 9105      		cpc r25,__zero_reg__
+ 433 02b6 01F0      		breq .+2
+ 434 02b8 00C0      		rjmp .L19
+ 435               	.L18:
+ 436               	.LM68:
+ 437 02ba E091 0000 		lds r30,buf_cnt
+ 438 02be F0E0      		ldi r31,lo8(0)
+ 439 02c0 E050      		subi r30,lo8(-(buf))
+ 440 02c2 F040      		sbci r31,hi8(-(buf))
+ 441 02c4 1082      		st Z,__zero_reg__
+ 442               	.LM69:
+ 443 02c6 80E0      		ldi r24,lo8(buf)
+ 444 02c8 90E0      		ldi r25,hi8(buf)
+ 445               	.LVL8:
+ 446 02ca 60E0      		ldi r22,lo8(.LC0)
+ 447 02cc 70E0      		ldi r23,hi8(.LC0)
+ 448 02ce 0E94 0000 		call strcmp
+ 449 02d2 0097      		sbiw r24,0
+ 450 02d4 01F0      		breq .+2
+ 451 02d6 00C0      		rjmp .L20
+ 452 02d8 88EE      		ldi r24,lo8(1000)
+ 453 02da 93E0      		ldi r25,hi8(1000)
+ 454               	.LVL9:
+ 455               	.L21:
+ 456               	.LBB54:
+ 457               	.LBB46:
+ 458               	.LBB45:
+ 459               	.LBB44:
+ 460               	.LM70:
+ 461 02dc F801      		movw r30,r16
+ 462               	.LVL10:
+ 463               	/* #APP */
+ 464               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 465 02de 3197      		1: sbiw r30,1
+ 466 02e0 01F4      		brne 1b
+ 467               	 ;  0 "" 2
+ 468               	/* #NOAPP */
+ 469               	.LBE44:
+ 470               	.LBE45:
+ 471               	.LM71:
+ 472 02e2 0197      		sbiw r24,1
+ 473               	.LM72:
+ 474 02e4 01F4      		brne .L21
+ 475               	.LBE46:
+ 476               	.LBE54:
+ 477               	.LM73:
+ 478 02e6 939A      		sbi 50-32,3
+ 479               	.LBB55:
+ 480               	.LBB53:
+ 481               	.LBB52:
+ 482               	.LBB51:
+ 483               	.LM74:
+ 484 02e8 C501      		movw r24,r10
+ 485               	.LVL11:
+ 486               	/* #APP */
+ 487               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 488 02ea 0197      		1: sbiw r24,1
+ 489 02ec 01F4      		brne 1b
+ 490               	 ;  0 "" 2
+ 491               	/* #NOAPP */
+ 492 02ee 88EE      		ldi r24,lo8(1000)
+ 493 02f0 93E0      		ldi r25,hi8(1000)
+ 494               	.LVL12:
+ 495               	.L22:
+ 496               	.LBE51:
+ 497               	.LBE52:
+ 498               	.LBE53:
+ 499               	.LBE55:
+ 500               	.LBB56:
+ 501               	.LBB57:
+ 502               	.LBB58:
+ 503               	.LBB59:
+ 504 02f2 F801      		movw r30,r16
+ 505               	.LVL13:
+ 506               	/* #APP */
+ 507               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 508 02f4 3197      		1: sbiw r30,1
+ 509 02f6 01F4      		brne 1b
+ 510               	 ;  0 "" 2
+ 511               	/* #NOAPP */
+ 512               	.LBE59:
+ 513               	.LBE58:
+ 514               	.LM75:
+ 515 02f8 0197      		sbiw r24,1
+ 516               	.LM76:
+ 517 02fa 01F4      		brne .L22
+ 518               	.LBE57:
+ 519               	.LBE56:
+ 520               	.LM77:
+ 521 02fc 00D0      		rcall .
+ 522 02fe 00D0      		rcall .
+ 523 0300 00D0      		rcall .
+ 524 0302 EDB7      		in r30,__SP_L__
+ 525 0304 FEB7      		in r31,__SP_H__
+ 526               	.LVL14:
+ 527 0306 3196      		adiw r30,1
+ 528 0308 ADB7      		in r26,__SP_L__
+ 529 030a BEB7      		in r27,__SP_H__
+ 530 030c 1296      		adiw r26,1+1
+ 531 030e FC92      		st X,r15
+ 532 0310 EE92      		st -X,r14
+ 533 0312 1197      		sbiw r26,1
+ 534 0314 D382      		std Z+3,r13
+ 535 0316 C282      		std Z+2,r12
+ 536 0318 8091 0000 		lds r24,Button_Pressed
+ 537               	.LVL15:
+ 538 031c 8483      		std Z+4,r24
+ 539 031e 1582      		std Z+5,__zero_reg__
+ 540 0320 0E94 0000 		call sprintf
+ 541               	.LM78:
+ 542 0324 8DB7      		in r24,__SP_L__
+ 543 0326 9EB7      		in r25,__SP_H__
+ 544 0328 0696      		adiw r24,6
+ 545 032a 0FB6      		in __tmp_reg__,__SREG__
+ 546 032c F894      		cli
+ 547 032e 9EBF      		out __SP_H__,r25
+ 548 0330 0FBE      		out __SREG__,__tmp_reg__
+ 549 0332 8DBF      		out __SP_L__,r24
+ 550 0334 C701      		movw r24,r14
+ 551 0336 0E94 0000 		call puts
+ 552 033a 88EE      		ldi r24,lo8(1000)
+ 553 033c 93E0      		ldi r25,hi8(1000)
+ 554               	.LVL16:
+ 555               	.L23:
+ 556               	.LBB60:
+ 557               	.LBB61:
+ 558               	.LBB62:
+ 559               	.LBB63:
+ 560               	.LM79:
+ 561 033e F801      		movw r30,r16
+ 562               	.LVL17:
+ 563               	/* #APP */
+ 564               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 565 0340 3197      		1: sbiw r30,1
+ 566 0342 01F4      		brne 1b
+ 567               	 ;  0 "" 2
+ 568               	/* #NOAPP */
+ 569               	.LBE63:
+ 570               	.LBE62:
+ 571               	.LM80:
+ 572 0344 0197      		sbiw r24,1
+ 573               	.LM81:
+ 574 0346 01F4      		brne .L23
+ 575               	.LBE61:
+ 576               	.LBE60:
+ 577               	.LM82:
+ 578 0348 9398      		cbi 50-32,3
+ 579               	.LM83:
+ 580 034a 1092 0000 		sts Button_Pressed,__zero_reg__
+ 581               	.L20:
+ 582 034e 80E0      		ldi r24,lo8(0)
+ 583               	.LVL18:
+ 584               	.L24:
+ 585               	.LM84:
+ 586 0350 E82F      		mov r30,r24
+ 587               	.LVL19:
+ 588 0352 F0E0      		ldi r31,lo8(0)
+ 589               	.LVL20:
+ 590 0354 E050      		subi r30,lo8(-(buf))
+ 591 0356 F040      		sbci r31,hi8(-(buf))
+ 592               	.LVL21:
+ 593 0358 1082      		st Z,__zero_reg__
+ 594               	.LM85:
+ 595 035a 8F5F      		subi r24,lo8(-(1))
+ 596               	.LVL22:
+ 597 035c 8038      		cpi r24,lo8(-128)
+ 598 035e 01F4      		brne .L24
+ 599               	.LM86:
+ 600 0360 1092 0000 		sts buf_cnt,__zero_reg__
+ 601 0364 00C0      		rjmp .L33
+ 602               	.LVL23:
+ 603               	.L19:
+ 604               	.LM87:
+ 605 0366 2091 0000 		lds r18,buf_cnt
+ 606 036a 2F37      		cpi r18,lo8(127)
+ 607 036c 00F0      		brlo .+2
+ 608 036e 00C0      		rjmp .L33
+ 609               	.LM88:
+ 610 0370 E22F      		mov r30,r18
+ 611 0372 F0E0      		ldi r31,lo8(0)
+ 612 0374 E050      		subi r30,lo8(-(buf))
+ 613 0376 F040      		sbci r31,hi8(-(buf))
+ 614 0378 8083      		st Z,r24
+ 615               	.LM89:
+ 616 037a 2F5F      		subi r18,lo8(-(1))
+ 617 037c 2093 0000 		sts buf_cnt,r18
+ 618 0380 00C0      		rjmp .L33
+ 619               	.LFE11:
+ 621               	.global	uart_stream
+ 622               		.data
+ 625               	uart_stream:
+ 626 000c 0000 00   		.skip 3,0
+ 627 000f 03        		.byte	3
+ 628 0010 0000 0000 		.skip 4,0
+ 629 0014 0000      		.word	gs(uart_putc)
+ 630 0016 0000      		.word	gs(uart_getc)
+ 631 0018 0000      		.word	0
+ 632               	.global	Button_Pressed
+ 633               	.global	Button_Pressed
+ 634               		.section .bss
+ 637               	Button_Pressed:
+ 638 0000 00        		.skip 1,0
+ 639               	.global	Button_0_State
+ 640               	.global	Button_0_State
+ 643               	Button_0_State:
+ 644 0001 00        		.skip 1,0
+ 645               	.global	Button_1_State
+ 646               	.global	Button_1_State
+ 649               	Button_1_State:
+ 650 0002 00        		.skip 1,0
+ 651               	.global	Button_2_State
+ 652               	.global	Button_2_State
+ 655               	Button_2_State:
+ 656 0003 00        		.skip 1,0
+ 657               	.global	Button_3_State
+ 658               	.global	Button_3_State
+ 661               	Button_3_State:
+ 662 0004 00        		.skip 1,0
+ 663               	.global	ButtonTimer_0
+ 664               	.global	ButtonTimer_0
+ 667               	ButtonTimer_0:
+ 668 0005 0000 0000 		.skip 4,0
+ 669               	.global	ButtonTimer_1
+ 670               	.global	ButtonTimer_1
+ 673               	ButtonTimer_1:
+ 674 0009 0000 0000 		.skip 4,0
+ 675               	.global	ButtonTimer_2
+ 676               	.global	ButtonTimer_2
+ 679               	ButtonTimer_2:
+ 680 000d 0000 0000 		.skip 4,0
+ 681               	.global	ButtonTimer_3
+ 682               	.global	ButtonTimer_3
+ 685               	ButtonTimer_3:
+ 686 0011 0000 0000 		.skip 4,0
+ 687               	.global	Flag
+ 688               	.global	Flag
+ 691               	Flag:
+ 692 0015 00        		.skip 1,0
+ 693               		.comm buf,128,1
+ 694               		.comm buf_cnt,1,1
+ 695               		.comm word_out,128,1
+ 696               		.comm word_cnt,1,1
+ 729               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\user\AppData\Local\Temp/cctZ169h.s:2      *ABS*:0000003f __SREG__
+C:\Users\user\AppData\Local\Temp/cctZ169h.s:3      *ABS*:0000003e __SP_H__
+C:\Users\user\AppData\Local\Temp/cctZ169h.s:4      *ABS*:0000003d __SP_L__
+C:\Users\user\AppData\Local\Temp/cctZ169h.s:5      *ABS*:00000034 __CCP__
+C:\Users\user\AppData\Local\Temp/cctZ169h.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\user\AppData\Local\Temp/cctZ169h.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\user\AppData\Local\Temp/cctZ169h.s:18     .text:00000000 __vector_1
+C:\Users\user\AppData\Local\Temp/cctZ169h.s:667    .bss:00000005 ButtonTimer_0
+C:\Users\user\AppData\Local\Temp/cctZ169h.s:643    .bss:00000001 Button_0_State
+C:\Users\user\AppData\Local\Temp/cctZ169h.s:637    .bss:00000000 Button_Pressed
+C:\Users\user\AppData\Local\Temp/cctZ169h.s:673    .bss:00000009 ButtonTimer_1
+C:\Users\user\AppData\Local\Temp/cctZ169h.s:649    .bss:00000002 Button_1_State
+C:\Users\user\AppData\Local\Temp/cctZ169h.s:679    .bss:0000000d ButtonTimer_2
+C:\Users\user\AppData\Local\Temp/cctZ169h.s:655    .bss:00000003 Button_2_State
+C:\Users\user\AppData\Local\Temp/cctZ169h.s:685    .bss:00000011 ButtonTimer_3
+C:\Users\user\AppData\Local\Temp/cctZ169h.s:661    .bss:00000004 Button_3_State
+C:\Users\user\AppData\Local\Temp/cctZ169h.s:177    .text:00000128 main
+C:\Users\user\AppData\Local\Temp/cctZ169h.s:625    .data:0000000c uart_stream
+                            *COM*:00000001 buf_cnt
+                            *COM*:00000080 buf
+C:\Users\user\AppData\Local\Temp/cctZ169h.s:691    .bss:00000015 Flag
+                            *COM*:00000080 word_out
+                            *COM*:00000001 word_cnt
+
+UNDEFINED SYMBOLS
+__iob
+uart_init
+fgetc
+strcmp
+sprintf
+puts
+uart_putc
+uart_getc
+__do_copy_data
+__do_clear_bss

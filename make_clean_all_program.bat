@@ -1,0 +1,3 @@
+make clean
+make all
+program_usbasp_flash_write
